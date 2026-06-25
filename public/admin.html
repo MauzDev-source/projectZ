@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectZ - Upload Build</title>
+    <meta name="description" content="Upload and manage ProjectZ downloadable builds.">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <nav class="topline admin-topline" aria-label="Primary">
+        <a href="/">Download Page</a>
+        <a href="#recentBuilds">Builds</a>
+      </nav>
+
+      <section class="admin-layout" aria-label="Upload ProjectZ build">
+        <div class="admin-copy">
+          <p class="eyebrow">Developer Access</p>
+          <h1><span>Upload</span><strong>Build</strong></h1>
+          <p class="tagline">
+            Publish a zip, installer, APK, or packaged build and players get a download link instantly.
+          </p>
+          <p class="admin-note" id="adminHint">
+            Local default admin key: projectz-admin
+          </p>
+        </div>
+
+        <form class="upload-panel" id="uploadForm">
+          <label>
+            Admin Key
+            <input id="adminKey" name="adminKey" type="password" autocomplete="current-password" required>
+          </label>
+
+          <div class="form-row">
+            <label>
+              Version
+              <input name="version" type="text" placeholder="v1.0.0" required>
+            </label>
+            <label>
+              Platform
+              <select name="platform">
+                <option>Windows</option>
+                <option>macOS</option>
+                <option>Linux</option>
+                <option>Android</option>
+                <option>iOS</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Channel
+            <select name="channel">
+              <option>Public</option>
+              <option>Beta</option>
+              <option>Demo</option>
+              <option>Patch</option>
+            </select>
+          </label>
+
+          <label>
+            Build File
+            <input name="build" type="file" accept=".zip,.rar,.7z,.tar,.gz,.tgz,.exe,.msi,.dmg,.pkg,.apk,.ipa" required>
+          </label>
+
+          <label>
+            Release Notes
+            <textarea name="notes" rows="5" placeholder="What changed in this build?"></textarea>
+          </label>
+
+          <div class="progress" aria-hidden="true">
+            <span id="uploadProgress"></span>
+          </div>
+
+          <button class="primary-action" type="submit">
+            <span class="action-icon" aria-hidden="true">↑</span>
+            Publish Build
+          </button>
+
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </section>
+
+      <section class="section admin-section" id="recentBuilds">
+        <div class="section__heading">
+          <p class="eyebrow">Archive</p>
+          <h2>Uploaded Builds</h2>
+        </div>
+        <div class="build-grid compact" id="adminBuildGrid"></div>
+      </section>
+    </main>
+
+    <script src="/admin.js"></script>
+  </body>
+</html>
+

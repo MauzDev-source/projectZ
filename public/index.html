@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectZ - Download</title>
+    <meta
+      name="description"
+      content="Download the latest ProjectZ game build and follow new releases."
+    >
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-label="ProjectZ download">
+        <div class="hero__shade"></div>
+        <div class="hero__content">
+          <nav class="topline" aria-label="Primary">
+            <a href="#builds">Builds</a>
+            <a href="/admin.html">Upload</a>
+          </nav>
+
+          <div class="menu-panel">
+            <p class="eyebrow">Survival Run</p>
+            <h1><span>Project</span><strong>Z</strong></h1>
+            <p class="tagline">Enter the quiet zone, gear up, and make it through the dusk.</p>
+
+            <div class="menu-actions">
+              <a class="primary-action is-disabled" id="latestDownload" href="#" aria-disabled="true">
+                <span class="action-icon" aria-hidden="true">↓</span>
+                Download Latest
+              </a>
+              <a class="secondary-action" href="#builds">
+                <span class="action-icon" aria-hidden="true">≡</span>
+                View Builds
+              </a>
+              <a class="secondary-action" href="/admin.html">
+                <span class="action-icon" aria-hidden="true">↑</span>
+                Upload Build
+              </a>
+            </div>
+
+            <div class="latest-strip" id="latestStrip">
+              <span class="status-dot"></span>
+              Waiting for first public build
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="builds">
+        <div class="section__heading">
+          <p class="eyebrow">Public Downloads</p>
+          <h2>ProjectZ Builds</h2>
+        </div>
+        <div class="build-grid" id="buildGrid">
+          <article class="empty-state">
+            <h3>No builds uploaded yet</h3>
+            <p>Upload a build from the admin page and it will appear here for players.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
+
